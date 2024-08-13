@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "a9c7567d-63ab-4a40-87cf-8dac1598eb22",
+		"name": "TEST BACKEND DEVELOPER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30820499"
+	},
+	"item": [
+		{
+			"name": "Register-customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\":\"farhan\", \r\n  \"email\": \"farhan@example.com\",\r\n  \"password\": \"farhan123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/customer/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login-customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"customere@example.com\",\r\n  \"password\": \"passworde\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/customer/login"
+			},
+			"response": []
+		},
+		{
+			"name": "get-Product",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": {
+						"secret": "",
+						"algorithm": "HS256",
+						"isSecretBase64Encoded": false,
+						"payload": "{}",
+						"addTokenTo": "header",
+						"headerPrefix": "Bearer",
+						"queryParamKey": "token",
+						"header": "{}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "http://localhost:3000/merchant/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Login-merchant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"merchantB@example.com\",\r\n  \"password\": \"passworde\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/merchant/login"
+			},
+			"response": []
+		},
+		{
+			"name": "merchant-Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\":\"farhan\", \r\n  \"email\": \"farhan@example.com\",\r\n  \"password\": \"farhan123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/merchant/register"
+			},
+			"response": []
+		},
+		{
+			"name": "get-merchant-products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzIzNTM3NTIwLCJleHAiOjE3MjM2MjM5MjB9.id1D6hZzS8ajmW_Prw8UlXd6lgcdHakemY1OyMyP23c",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "http://localhost:3000/merchant/products"
+			},
+			"response": []
+		},
+		{
+			"name": "-get-merchant-customers-buyProduct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzIzNTQwOTQ5LCJleHAiOjE3MjM2MjczNDl9.oTFFZ5oN-Vem4tImBnYbklvGx9kkUzMp2JgrNxP3jX8",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/merchant/customers"
+			},
+			"response": []
+		},
+		{
+			"name": "post-transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzIzNTQwNDk4LCJleHAiOjE3MjM2MjY4OTh9.2T3uslyeyYBIGUtiouD7b_xDZQK247yOfqpoim8rBuo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 1,\r\n  \"quantity\": 9\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/customer/transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "Create-products-Bymerchant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzIzNTQxMzA0LCJleHAiOjE3MjM2Mjc3MDR9.44d5PpNEjeIDT2satgeXsnYwXbxSDUAcGrMKdOV6RAU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" :\"SOKLIN LANTAI\",\r\n    \"price\":400000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/merchant/products"
+			},
+			"response": []
+		},
+		{
+			"name": "update-products-Bymerchant",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzIzNTQxNjM4LCJleHAiOjE3MjM2MjgwMzh9.1TPf3W6NJ-x8j-SfmdcYW89SB8eZQUEeNureXM4W754",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"SABUN CAIR HITAM\",\r\n    \"price\":\"24000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/merchant/products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"merchant",
+						"products",
+						"3"
+					],
+					"query": [
+						{
+							"key": "2",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-products-Bymerchant",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzIzNTQxNzkwLCJleHAiOjE3MjM2MjgxOTB9.Vq04AIc95uMNDgb0lJ2O2A8EwoShVqK1rSjD9J06WEI",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/merchant/products/5"
+			},
+			"response": []
+		}
+	]
+}
